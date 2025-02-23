@@ -25,7 +25,7 @@ jobs:
           
           - name: Add Hugging Face Remote
             run: |
-              git remote add huggingface https://user:${HF_TOKEN}@huggingface.co/spaces/1-13-am/lumina-early-proto || true
+              git remote add huggingface https://user:${HF_TOKEN}@huggingface.co/spaces/1-13-am/lumina-early-proto
           
           - name: Push to Hugging Face
             run: |
