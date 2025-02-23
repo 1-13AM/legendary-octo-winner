@@ -17,5 +17,5 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run:
-            git pull
+            git pull origin main
             git push https://1-13-am:$HF_TOKEN@huggingface.co/spaces/1-13-am/lumina-early-proto main
