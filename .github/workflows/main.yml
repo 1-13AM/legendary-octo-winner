@@ -18,15 +18,16 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          # Set up Git identity (Hugging Face)
-          git config --global user.email "dinhhai1ccg@gmail.com"  # Use your Hugging Face email
-          git config --global user.name "1-13-am"  # Use your Hugging Face username
-
-          # Authenticate with Hugging Face using token
-          git remote set-url origin https://user:${HF_TOKEN}@huggingface.co/spaces/1-13-am/lumina-early-proto
-
-          # Ensure repo is up-to-date before pushing
-          git pull origin main --rebase
-          git push origin main
-
+          - name: Configure Git
+            run: |
+              git config --global user.email "dinhhai1ccg@gmail.com"
+              git config --global user.name "1-13-am"
+          
+          - name: Add Hugging Face Remote
+            run: |
+              git remote add huggingface https://user:${HF_TOKEN}@huggingface.co/spaces/1-13-am/lumina-early-proto || true
+          
+          - name: Push to Hugging Face
+            run: |
+              git push huggingface main --force
 
