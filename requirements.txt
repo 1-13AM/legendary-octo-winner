@@ -1,0 +1,10 @@
+streamlit
+pydantic
+weaviate
+loguru
+pymongo
+python-dotenv
+openai
+networkx
+scikit-learn
+tiktoken
