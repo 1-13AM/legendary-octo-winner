@@ -23,7 +23,7 @@ jobs:
           git config --global user.name "1-13-am"  # Use your Hugging Face username
 
           # Authenticate with Hugging Face using token
-          git remote set-url origin https://user:${HF_TOKEN}@huggingface.co/1-13-am/lumina-early-proto
+          git remote set-url origin https://user:${HF_TOKEN}@huggingface.co/spaces/1-13-am/lumina-early-proto
 
           # Ensure repo is up-to-date before pushing
           git pull origin main --rebase
