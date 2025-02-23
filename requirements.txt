@@ -1,6 +1,7 @@
 streamlit
 pydantic
 weaviate
+weaviate-client
 loguru
 pymongo
 python-dotenv
