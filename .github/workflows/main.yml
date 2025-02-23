@@ -14,17 +14,16 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - name: Configure Git
+      - name: Push to Hugging Face Hub
+        env:
+            HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
+          # Set up Git identity (Hugging Face)
           git config --global user.email "dinhhai1ccg@gmail.com"
           git config --global user.name "1-13-am"
 
-      - name: Add Hugging Face Remote
-        run: |
-          git remote add huggingface https://user:${HF_TOKEN}@huggingface.co/spaces/1-13-am/lumina-early-proto || true
+          # Add Hugging Face remote
+          git remote add huggingface https://user:${HF_TOKEN}@huggingface.co/spaces/1-13-am/lumina-early-proto
 
-      - name: Push to Hugging Face
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
+          # Force push to Hugging Face 
           git push huggingface main --force
